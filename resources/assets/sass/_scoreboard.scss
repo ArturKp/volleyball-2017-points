@@ -1,0 +1,74 @@
+body[route^="scoreboard"] {
+    background: #000;
+}
+
+.team-scores {
+    text-align: center;
+    overflow: hidden;
+    padding: 30px;
+
+    .team-name {
+        text-align: center;
+        font-size: 120px;
+        line-height: 1;
+        text-transform: uppercase;
+        border-bottom: 5px solid #000;
+        white-space: nowrap;
+    }
+    .score {
+        font-family: 'Electrolize', sans-serif;
+    }
+    .score-total {
+        font-size: 180px;
+        margin: 60px 0;
+        line-height: 1;
+    }
+    .score-minimatch {
+        min-width: 225px;
+        margin: 10px;
+        border-radius: 15px;
+        font-size: 72px;
+        padding: 20px 50px;
+        float: right;
+        border: 5px solid #000;
+    }
+
+    .team-wins {
+        font-size: 32px;
+    }
+
+    .action-add, .action-remove {
+        font-size: 48px;
+        min-width: 90px;
+        & + .btn {
+            margin-left: 20px;
+        }
+    }
+
+    &.white {
+        color: #fff;
+
+        .team-name {
+            border-bottom: 5px solid #fff;
+        }
+        .score-minimatch {
+            border: 5px solid #fff;
+        }
+    }
+
+    &.small {
+        .team-name {
+            font-size: 50px;
+            border-bottom: 0;
+        }
+
+        .score-total {
+            font-size: 100px;
+        }
+
+        .score-minimatch {
+            float: none;
+            text-align: center;
+        }
+    }
+}
