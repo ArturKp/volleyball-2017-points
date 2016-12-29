@@ -27,14 +27,16 @@
                         <button class="btn btn-danger action-remove" onclick="scoreboard.remove(1)">-1</button>
 
                         <br><br>
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+                                <button class="btn btn-warning action-winner" onclick="scoreboard.win(1)">Mark as winner of this minimatch</button>
+                            </div>
+                        </div>
+                        <br><br>
+
                         <div class="score score-total">Total: <span id="team1-score">0</span></div>
                         <div class="team-wins">Wins: <span id="team1-wins">&nbsp;</span></div>
 
-                        <div class="row">
-                            <div class="col-xs-12 text-center">
-                                <button class="btn btn-warning action-winner" onclick="scoreboard.win(1)">Winner</button>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
@@ -53,14 +55,16 @@
                         <button class="btn btn-danger action-remove" onclick="scoreboard.remove(2)">-1</button>
 
                         <br><br>
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+                                <button class="btn btn-warning action-winner" onclick="scoreboard.win(2)">Mark as winner of this minimatch</button>
+                            </div>
+                        </div>
+                        <br><br>
+
                         <div class="score score-total">Total: <span id="team2-score">0</span></div>
                         <div class="team-wins">Wins: <span id="team2-wins">&nbsp;</span></div>
 
-                        <div class="row">
-                            <div class="col-xs-12 text-center">
-                                <button class="btn btn-warning action-winner" onclick="scoreboard.win(2)">Winner</button>
-                            </div>
-                        </div>
                     </div>
 
 

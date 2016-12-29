@@ -46,6 +46,8 @@ class TeamController extends Controller
         if($updated === 0) { throw new \Exception("Nothing updated!"); }
 
         event(new \App\Events\ScoresUpdated());
+
+        return response()->json(Team::all());
     }
 
     // Only remove, if some minimatch is active
@@ -62,6 +64,8 @@ class TeamController extends Controller
         if($updated === 0) { throw new \Exception("Nothing updated!"); }
 
         event(new \App\Events\ScoresUpdated());
+
+        return response()->json(Team::all());
     }
 
     public function win($teamId)
@@ -86,6 +90,8 @@ class TeamController extends Controller
         });
 
         event(new \App\Events\ScoresUpdated());
+
+        return response()->json(Team::all());
     }
 
     // Make changes to all fields
@@ -94,5 +100,7 @@ class TeamController extends Controller
         Team::findOrFail($teamId)->update($request->all());
 
         event(new \App\Events\ScoresUpdated());
+
+        return response()->json(Team::all());
     }
 }

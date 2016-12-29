@@ -77,8 +77,9 @@
         Vue.http.post('/team/' + id + '/add').then(onAddSuccess, onAddFailure);
     }
 
-    function onAddSuccess() {
+    function onAddSuccess(data) {
         toastr.success('+1');
+        setScores(data.body);
     }
 
     function onAddFailure() { toastr.error('Failed!'); }
@@ -87,18 +88,26 @@
         Vue.http.post('/team/' + id + '/remove').then(onRemoveSuccess, onRemoveFailure);
     }
 
-    function onRemoveSuccess() {
+    function onRemoveSuccess(data) {
         toastr.success('-1');
+        setScores(data.body);
     }
 
     function onRemoveFailure() { toastr.error('Failed!'); }
 
     function win(id) {
+
+        var team_name = jQuery('#team' + id + "-name").html();
+
+        if( ! confirm('Confirm that winner is ' + team_name + " and finish this minimatch?")) {
+            return;
+        }
         Vue.http.post('/team/' + id + '/win').then(onWinSuccess, onWinFailure);
     }
 
-    function onWinSuccess() {
+    function onWinSuccess(data) {
         toastr.success('Saved');
+        setScores(data.body);
     }
 
     function onWinFailure() { toastr.error('Failed!'); }
