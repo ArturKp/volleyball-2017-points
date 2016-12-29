@@ -21,6 +21,15 @@ class TeamController extends Controller
 
     public function indexCsv()
     {
+        $teams = Team::all();
+
+        $first = $teams->first();
+        $second = $teams[1];
+
+        return response()->csv([
+            ['team1_name', 'team1_score', 'team1_minimatch_score', 'team1_wins', 'team2_name', 'team2_score', 'team2_minimatch_score', 'team2_wins'],
+            [$first->name, $first->score, $first->minimatch_score, $first->wins, $second->name, $second->score, $second->minimatch_score, $second->wins],
+        ]);
         return response()->csv(Team::all());
     }
 
