@@ -99,7 +99,7 @@
 
         var team_name = jQuery('#team' + id + "-name").html();
 
-        if( ! confirm('Confirm that winner is ' + team_name + " and finish this minimatch?")) {
+        if( ! confirm('Confirm that winner is ' + team_name.toUpperCase() + " and finish this minimatch?")) {
             return;
         }
         Vue.http.post('/team/' + id + '/win').then(onWinSuccess, onWinFailure);
