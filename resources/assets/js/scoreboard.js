@@ -30,7 +30,7 @@
     }
 
     function openSocket() {
-        var socket = io('http://localhost:3000', {
+        var socket = io(':3000', {
             'reconnection': true,
             'reconnectionDelay': 500,
             'reconnectionDelayMax' : 10 * 1000,
