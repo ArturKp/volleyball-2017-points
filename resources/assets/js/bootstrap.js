@@ -18,6 +18,7 @@ require('bootstrap-sass');
 
 window.Vue = require('vue');
 require('vue-resource');
+Vue.config.devtools = false;
 
 require('jquery-textfill/source/jquery.textfill.min.js');
 
