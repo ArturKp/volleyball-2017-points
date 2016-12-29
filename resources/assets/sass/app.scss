@@ -17,4 +17,21 @@ body {
   min-width: 450px;
 }
 
+.navbar.min {
+    top: -45px;
+
+    &:hover {
+        top: 0;
+
+        .navbar-min-toggle {
+            @extend .btn:active
+        }
+
+    }
+}
+
+.navbar {
+    transition: all 200ms ease-in-out;
+}
+
 @import "scoreboard";

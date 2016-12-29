@@ -25,7 +25,7 @@
 </head>
 <body route="{{ Request::path() }}">
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top" id="navbar-wrapper">
             <div class="container">
                 <div class="navbar-header">
 
@@ -39,14 +39,16 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        <img src="{{ asset('img/sportid-wide.svg') }}" alt="" style="height: 100%;">
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li>
+                            <a class="btn btn-default navbar-min-toggle"  style="border:none;" onclick="jQuery('#navbar-wrapper').toggleClass('min')"><i class="fa fa-arrows-alt"></i></a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
