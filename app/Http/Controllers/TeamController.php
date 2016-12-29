@@ -11,12 +11,17 @@ class TeamController extends Controller
 
     public function __construct()
     {
-        $this->middleware('admin', ['except' => 'index']);
+        $this->middleware('admin', ['except' => ['index', 'indexCsv']]);
     }
 
     public function index()
     {
         return response()->json(Team::all());
+    }
+
+    public function indexCsv()
+    {
+        return response()->csv(Team::all());
     }
 
     public function add($teamId)

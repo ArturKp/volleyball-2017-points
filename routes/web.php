@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 Route::get('/scoreboard', function() { return view('scoreboard'); });
 
+Route::get('team.csv', 'TeamController@indexCsv');
 Route::resource('team', 'TeamController', ['only' => ['update', 'index']]);
 
 Route::post('team/{team_id}/add', 'TeamController@add');

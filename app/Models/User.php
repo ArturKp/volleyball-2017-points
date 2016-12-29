@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\BaseModel;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
-{
-    use Notifiable;
+class User extends BaseModel implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract {
+
+    use Notifiable, Authenticatable, Authorizable, CanResetPassword;
 
     /**
      * The attributes that are mass assignable.

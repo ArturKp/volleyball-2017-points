@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\BaseModel;
 
-class Team extends Model
+class Team extends BaseModel
 {
 
     protected $table = 'team';
