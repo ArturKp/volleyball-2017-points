@@ -33,10 +33,6 @@ body[route^="scoreboard"] {
         border: 5px solid #000;
     }
 
-    .team-wins {
-        font-size: 32px;
-    }
-
     .action-add, .action-remove {
         font-size: 48px;
         min-width: 90px;
@@ -57,13 +53,16 @@ body[route^="scoreboard"] {
     }
 
     &.small {
+
         .team-name {
             font-size: 50px;
             border-bottom: 0;
         }
 
-        .score-total {
-            font-size: 100px;
+        .score-total, .team-wins {
+            margin: 10px 0;
+            font-size: 32px;
+            font-family: "Raleway", sans-serif;
         }
 
         .score-minimatch {
@@ -71,4 +70,10 @@ body[route^="scoreboard"] {
             text-align: center;
         }
     }
+}
+
+.rotate-teams {
+    border: none;
+    background: none;
+    outline: none;
 }

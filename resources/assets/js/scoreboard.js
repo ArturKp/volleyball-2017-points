@@ -17,12 +17,12 @@
     function adjustFontSizes() {
 
         // https://github.com/jquery-textfill/jquery-textfill
-        jQuery('.score-total').textfill({
+        jQuery('body[route^="scoreboard"] .score-total').textfill({
             maxFontPixels: 180,
             widthOnly: true
         });
 
-        jQuery('.team-name').textfill({
+        jQuery('body[route^="scoreboard"] .team-name').textfill({
             maxFontPixels: 120,
             widthOnly: true
         });
@@ -103,10 +103,15 @@
 
     function onWinFailure() { toastr.error('Failed!'); }
 
+    function changeTeams() {
+        jQuery('#team-1-wrapper').toggleClass('pull-right');
+    }
+
     window.scoreboard = {
         add: add,
         remove: remove,
-        win: win
+        win: win,
+        changeTeams: changeTeams
     };
 
 
